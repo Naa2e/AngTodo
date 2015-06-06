@@ -1,0 +1,54 @@
+h1 My Todos
+.row
+  h3 Create a task
+  form#todoForm
+    input(type='hidden', name='db_id')
+    .form-group
+      label Title:
+      input#todoTitle(type='text', name='title', ng-model='todo.title')
+    .form-group
+      label Description:
+      textarea#todoDescription(name='description', ng-model='todo.description')
+    .form-group
+      label Priority:
+      input#todoPriority(type='number', name='priority', ng-model='todo.priority')
+    .form-group
+      label Complete by:
+      input#todoDuedate(type='date', name='due_date', ng-model='todo.due_date' )
+    .form-group
+      label Completed:
+      input#todoDone(type='checkbox', name='complete', ng-model='todo.complete')
+    button.btn.btn-success.btn-large(ng-click='submitTodo()') Add Todo
+
+table.table.table-striped
+    thead
+        tr
+          th Task
+
+          th Details
+
+          th Priority
+
+          th Due Date
+
+          th Complete
+
+          th Delete
+
+          th Edit
+
+    tbody
+          tr(ng-repeat='todo in myTodos')
+            td {{todo.title}}
+
+            td {{todo.description}}
+
+            td {{todo.priority}}
+
+            td {{todo.due_date | date}}
+
+            td {{todo.complete}}
+
+            td.btn.btn-default.deleteButton(id='{{todo._id}}') Complete
+
+            td.btn.btn-default.editButton(id='{{todo._id}}') Edit
