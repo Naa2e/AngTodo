@@ -37,15 +37,15 @@ $scope.getTodos = function(){
 
 $scope.getTodos();
 
-$scope.deleteTodos = function(){
+$scope.deleteTodos = function(todoID){
     console.log('you clicked the deleteTodo button')
     $http({
           method: 'DELETE',
-          url: '/api/tasks/:id',
+          url: '/api/tasks/' + todoID,
         }).
         success(function (data, status, headers, config) {
           console.log('you killed it', data)
-          $scope.myTodos = data
+          $scope.getTodos();
 
         }).
         error(function (data, status, headers, config) {

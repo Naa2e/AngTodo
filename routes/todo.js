@@ -62,6 +62,7 @@ router.get('/:id', function (req, res) {
 
 // Handle a DELETE request from the client to /todo
 router.delete('/:id', function (req, res) {
+  console.log('Trying to delete or something');
   Todo.find({ _id: req.params.id })
       .remove(function (err) {
 

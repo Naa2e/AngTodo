@@ -49,6 +49,6 @@ table.table.table-striped
 
             td {{todo.complete}}
 
-            td.btn.btn-default.deleteButton(id='{{todo._id}}') Complete
+            td.btn.btn-default.deleteButton(ng-click='deleteTodos(todo._id)') Completed
 
             td.btn.btn-default.editButton(id='{{todo._id}}') Edit

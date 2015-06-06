@@ -4,7 +4,7 @@
 
 var controllers = angular.module('myApp.controllers', [])
 controllers.controller('AppCtrl', function ($scope, $http) {
-    $http({
+    /*$http({
           method: 'GET',
           url: '/api/user'
         }).
@@ -13,7 +13,12 @@ controllers.controller('AppCtrl', function ($scope, $http) {
         }).
         error(function (data, status, headers, config) {
           $scope.name = 'Error!';
-        });
+        });*/
   })
 
+controllers.service('myService', function (){
+  this.editTask = {};
+})
+
+controllers.controller('EditCtrl, function ($scope, $')
 
